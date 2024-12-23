@@ -52,8 +52,8 @@ if errorlevel 1 (
 
 copy NUL %OUTPUT_TEST_FILE%
 
-:: Create each challenge solution file using the pre-defined script in Pycharm scratches
-type commons\base_solution.py >> %PY_FILE%
+:: Create each challenge solution file using the pre-defined script in Pycharm scratches, if file doesnt exist. (refresh test data)
+if not exist %PY_FILE% type commons\base_solution.py >> %PY_FILE%
 
 
 endlocal
